@@ -8,13 +8,15 @@ struct node_421 *current = NULL;
 struct node_421* tail = NULL;
 
 long init_buffer_421(void) {
+	struct node_421* temp = malloc(sizeof(struct node_421));
+        static ring_buffer_421_t buffer;
+
+	int i = 0;
+
 	// checks if buffer already been initialized
         if (head != NULL) {
                 return -1;
         }
-
-	struct node_421* temp = malloc(sizeof(struct node_421));
-	static ring_buffer_421_t buffer;
 
 	temp->data = 0;
 	temp->next = temp;
@@ -25,7 +27,7 @@ long init_buffer_421(void) {
 	// tail location
 	tail = temp;
 
-	for (int i = 0; i<=18; i++) {
+	while (i<=18) {
 		struct node_421* newP = malloc(sizeof(struct node_421));
 		newP -> data = 0;
 		newP -> next = NULL;
@@ -34,6 +36,8 @@ long init_buffer_421(void) {
 		tail->next = newP;
 
 		tail = tail->next;
+
+		i++;
 	}
 
 	// Allows the read to start at head
