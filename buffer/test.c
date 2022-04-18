@@ -45,7 +45,7 @@ int main() {
 	}
 
 	printf("Inserts up to 20 integers into the next available node\n");
-	for (int y=0; y<=20; y++) {
+	for (int y=1; y<=20; y++) {
 		check = insert_buffer_421(y);
 	}
 

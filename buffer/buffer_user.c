@@ -6,10 +6,10 @@
 struct node_421 *head = NULL;
 struct node_421 *current = NULL;
 struct node_421* tail = NULL;
+struct ring_buffer_421 buffer;
 
 long init_buffer_421(void) {
 	struct node_421* temp = malloc(sizeof(struct node_421));
-        static ring_buffer_421_t buffer;
 
 	int i = 0;
 
@@ -46,15 +46,11 @@ long init_buffer_421(void) {
 	// gives the tail location to current for insert
 	current = tail;
 
-//	printf("Length: %d\n", count->length);
 	return 0;
 }
 
 
 long insert_buffer_421(int i) {
-//	struct ring_buffer_421* count = malloc(sizeof(struct ring_buffer_421));
-	static ring_buffer_421_t buffer;
-
 	//Inserting fails if the buffer is already full.
 	if (current->next->data != 0) {
 		printf("Buffer is full\n");
@@ -85,8 +81,6 @@ long insert_buffer_421(int i) {
 
 
 long print_buffer_421() {
-	static ring_buffer_421_t buffer;
-
 	// The index of each node
 	int count = 0;
 
@@ -115,13 +109,13 @@ long print_buffer_421() {
 
 
 long delete_buffer_421() {
-	static ring_buffer_421_t buffer;
-
+	// if head is empty, then the delet will be unsuccessful
 	if(head == NULL) {
 		printf("Deleting the buffer unsuccessful\n");
 		return -1;
 	}
 
+	// when the delete function is apply
 	if(head != NULL) {
     		// If head is not null create a temp node and current node pointed to next of head
     		struct node_421* temp;

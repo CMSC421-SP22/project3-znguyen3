@@ -6,10 +6,10 @@
 struct node_421 *head = NULL;
 struct node_421 *current_now = NULL;
 struct node_421* tail = NULL;
+struct ring_buffer_421 buffer;
 
 SYSCALL_DEFINE0(init_buffer_421) {
 	struct node_421* temp = kmalloc(sizeof(struct node_421), GFP_KERNEL);
-        static ring_buffer_421_t buffer;
 
 	int i = 0;
 
@@ -50,8 +50,6 @@ SYSCALL_DEFINE0(init_buffer_421) {
 }
 
 SYSCALL_DEFINE1(insert_buffer_421,int,i) {
-        static ring_buffer_421_t buffer;
-
         //Inserting fails if the buffer is already full.
         if (current_now->next->data != 0) {
                 printk("Buffer is full\n");
@@ -80,8 +78,6 @@ SYSCALL_DEFINE1(insert_buffer_421,int,i) {
 }
 
 SYSCALL_DEFINE0(print_buffer_421) {
-	static ring_buffer_421_t buffer;
-
         // The index of each node
         int count = 0;
 
@@ -109,13 +105,13 @@ SYSCALL_DEFINE0(print_buffer_421) {
 }
 
 SYSCALL_DEFINE0(delete_buffer_421) {
-	static ring_buffer_421_t buffer;
-
+	// if head is empty, then the delet will be unsuccessful
         if(head == NULL) {
                 printk("Deleting the buffer unsuccessful\n");
                 return -1;
         }
 
+	// when the delete function is apply
         if(head != NULL) {
                 // If head is not null create a temp node and current node pointed to next of head
                 struct node_421* temp;
