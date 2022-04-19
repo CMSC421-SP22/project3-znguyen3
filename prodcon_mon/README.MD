@@ -7,9 +7,13 @@ Monitor on a circular buffer using mutex and conditional variables with POSIX pt
 theirprint statements.
 
 How to compile the user space:
+
 gcc -c buffer_mon.c -lrt
+
 gcc -c test_mon.c -lrt
+
 gcc -Wall buffer_mon.c test_mon.c -o test -lpthread
+
 ./test
 
 The main difficulty I had was trying to implement monitor instead of semaphore. It was due to the hard difficulties with part 2 that I did not reach much 
