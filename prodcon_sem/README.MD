@@ -19,8 +19,13 @@ gcc -Wall buffer_user_sem.c test_user_sem.c -o test -lpthread
 ./test
 
 How to complie the kernel space:
+
 gcc test_sem.c -o testk
+
 ./testk
+
+Afterwards, if I had finshed my kernel, once the kernel compiles, check the dmesg output by running the following command:
+sudo dmesg
 
 The most challenging part was figuring out how to start with the semaphores with initializing the locks. Another issue 
 that keep on popping up was the sleep function not working as intended. The consumer and producer were hard to initialize into
