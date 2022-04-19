@@ -25,6 +25,7 @@ gcc test_sem.c -o testk
 ./testk
 
 Afterwards, if I had finshed my kernel, once the kernel compiles, check the dmesg output by running the following command:
+
 sudo dmesg
 
 The most challenging part was figuring out how to start with the semaphores with initializing the locks. Another issue 
