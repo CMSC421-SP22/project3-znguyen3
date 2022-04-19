@@ -18,7 +18,9 @@ gcc -Wall buffer_user.c test_user.c -o test
 ./test
 
 How to compile kernel space:
+
 gcc test.c -o testk
+
 ./testk
 
 Afterwards, once the kernel compiles, check the dmesg output by running the following command:
