@@ -34,7 +34,23 @@ int main() {
 
 	check = print_buffer_421();
 
+	 if (check == 0) {
+                printf("Print Success\n");
+        }
+
+        else {
+                printf("Print Failure\n");
+        }
+
 	check = delete_buffer_421();
+
+	 if (check == 0) {
+                printf("Delete Success\n");
+        }
+
+        else {
+                printf("Delete Failure\n");
+        }
 
 	return 0;
 }
