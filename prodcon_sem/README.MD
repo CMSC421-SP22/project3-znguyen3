@@ -34,4 +34,5 @@ c and get it right to get so that enqueue and dequeue function would work correc
 code as I was getting problems left and right with the semaphore working correctly. I would have added the systems calls to be
 added to syscalls.h as one of the requirements was suggested but I couldn't do it as it would have messed up part one kernel compiling due to
 part 2 not being fully completed. I have commented out the required code that would have added the syscalls and removed the proncon_sem from the kernel
-makefile to not mess up part 1.
+makefile to not mess up part 1. Most of the problems lies with myself getting stuck on struggling on how semaphrones work in a circular buffer and 
+being able to ultize the sleep() function correctly as the program does not continue after a sleep() function is undergoing.
