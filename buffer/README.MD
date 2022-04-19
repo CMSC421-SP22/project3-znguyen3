@@ -24,6 +24,7 @@ gcc test.c -o testk
 ./testk
 
 Afterwards, once the kernel compiles, check the dmesg output by running the following command:
+
 sudo dmesg
 
 The results should show that the initialization of 20 nodes is successful and then being inserted with data value increasing by 1 and starting
