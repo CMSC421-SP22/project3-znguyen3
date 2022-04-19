@@ -8,9 +8,13 @@ allocated memory. I created a circular buffer that comprises a singly linked lis
 the next node, forming a circular structure.
 
 How to compile user space:
+
 gcc -c test_user.c 
+
 gcc -c buffer_user.c
+
 gcc -Wall buffer_user.c test_user.c -o test
+
 ./test
 
 How to compile kernel space:
