@@ -9,9 +9,13 @@ a for loop to iterate 1000 times and used the rand() function to put random amou
 block containing 1024 char bytes into the circular buffer with both the producer and consumer executing concurrently.
 
 How to compile the user space:
+
 gcc -c buffer_user_sem.c -lrt
+
 gcc -c test_user_sem.c -lrt
+
 gcc -Wall buffer_user_sem.c test_user_sem.c -o test -lpthread
+
 ./test
 
 How to complie the kernel space:
